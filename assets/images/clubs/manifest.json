@@ -1,0 +1,18 @@
+[
+  {
+    "name": "debate_photo_1",
+    "src": "debate_photo_1.jpg",
+    "club": "Debate Club",
+    "type": "image/jpeg",
+    "alt": "Grand Finale & Prize Giving Ceremony — Shahid Selim BUFT National Debate Competition 2024",
+    "description": "Grand Finale & Prize Giving Ceremony — Shahid Selim BUFT National Debate Competition 2024"
+  },
+  {
+    "name": "photography_photo_2",
+    "src": "photography_photo_2.jpg",
+    "club": "Photography Club",
+    "type": "image/jpeg",
+    "alt": "BUFT Photography Club — Iftar Mahfil 2025 at Virgo Lounge",
+    "description": "BUFT Photography Club — Iftar Mahfil 2025 at Virgo Lounge"
+  }
+]
