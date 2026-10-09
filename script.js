@@ -768,7 +768,6 @@ class NavigationSystem {
       } else {
         header.classList.remove('scrolled');
       }
-      NavigationSystem.highlightActiveSection();
     });
 
     if (mobileMenuBtn && navLinks) {
@@ -812,23 +811,20 @@ class NavigationSystem {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
+    
+    // Highlight the active page based on URL
+    NavigationSystem.highlightActivePage();
   }
 
-  static highlightActiveSection() {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollPosition = window.scrollY + 140;
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
-      const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-
-      if (navLink) {
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-          navLink.classList.add('active');
-        }
+  static highlightActivePage() {
+    let currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    if (currentPath === '') currentPath = 'index.html';
+    
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.remove('active');
+      const href = link.getAttribute('href');
+      if (href === currentPath) {
+        link.classList.add('active');
       }
     });
   }
